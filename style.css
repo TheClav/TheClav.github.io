@@ -535,7 +535,7 @@ a:hover {
 
 .side-nav-track {
   position: absolute;
-  left: 5px;
+  left: calc(1.25rem + 6px);
   top: 0;
   bottom: 0;
   width: 2px;
@@ -546,7 +546,7 @@ a:hover {
 
 .side-nav-progress {
   position: absolute;
-  left: 5px;
+  left: calc(1.25rem + 6px);
   top: 0;
   width: 2px;
   height: 0%;
@@ -571,7 +571,7 @@ a:hover {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  border: 2px solid var(--color-border);
+  border: 2px solid var(--color-accent);
   background: var(--color-bg);
   transition: all 0.3s ease;
   flex-shrink: 0;
