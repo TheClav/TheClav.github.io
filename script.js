@@ -13,6 +13,15 @@ navLinks.querySelectorAll('a').forEach(link => {
   });
 });
 
+// Scroll hint — fade out on scroll, reappear at top
+(function() {
+  const hint = document.querySelector('.scroll-hint');
+  if (!hint) return;
+  window.addEventListener('scroll', () => {
+    hint.classList.toggle('hidden', window.scrollY > 5);
+  }, { passive: true });
+})();
+
 // Fade-in elements on scroll
 const observer = new IntersectionObserver(
   (entries) => {
