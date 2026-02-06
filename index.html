@@ -8,6 +8,37 @@
 </head>
 <body>
 
+  <!-- Side Navigation -->
+  <nav class="side-nav" aria-label="Section navigation">
+    <div class="side-nav-track"></div>
+    <div class="side-nav-progress"></div>
+    <div class="side-nav-item" data-target="about">
+      <span class="side-nav-dot"></span>
+      <span class="side-nav-label">About</span>
+    </div>
+    <div class="side-nav-item" data-target="projects">
+      <span class="side-nav-dot"></span>
+      <span class="side-nav-label">Projects</span>
+    </div>
+    <div class="side-nav-item" data-target="experience">
+      <span class="side-nav-dot"></span>
+      <span class="side-nav-label">Experience</span>
+    </div>
+    <div class="side-nav-item" data-target="testimonials">
+      <span class="side-nav-dot"></span>
+      <span class="side-nav-label">Testimonials</span>
+    </div>
+    <div class="side-nav-item" data-target="contact">
+      <span class="side-nav-dot"></span>
+      <span class="side-nav-label">Contact</span>
+    </div>
+  </nav>
+
+  <!-- Connector SVG -->
+  <svg class="side-nav-connector">
+    <line class="connector-line" x1="0" y1="0" x2="0" y2="0"></line>
+  </svg>
+
   <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-brand">Calvin DeBellis</div>
@@ -31,7 +62,7 @@
       <p class="hero-tagline">Computer Science &amp; Data Science &mdash; Let's create something awesome together.</p>
       <div class="hero-cta">
         <a href="#projects" class="btn btn-primary">Check Out My Work</a>
-        <a href="#contact" class="btn btn-outline">Say Hello</a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
       </div>
     </div>
   </header>
@@ -82,45 +113,61 @@
 
         <div class="project-card">
           <div class="project-header">
-            <h3>Project One</h3>
+            <h3>TrickSki ML Classifier</h3>
             <div class="project-links">
-              <a href="#" target="_blank" rel="noopener">GitHub</a>
-              <a href="#" target="_blank" rel="noopener">Live</a>
+              <a href="https://github.com/TheClav/Trickski-Image-Classifier" target="_blank" rel="noopener">GitHub</a>
             </div>
           </div>
-          <p>Add a description of your project here &mdash; what it does, what problem it solves, and your role.</p>
+          <p>Built a convolutional neural network to classify waterski trick orientation from custom video footage. Collaborated with a competition data provider for raw footage, designed the full dataset pipeline including image preprocessing and orientation-based spatial modeling, and optimized classification accuracy toward an automated judging system that can score a skier's run directly from video.</p>
           <div class="project-tags">
             <span class="tag">Python</span>
-            <span class="tag">SQL</span>
+            <span class="tag">CNN</span>
+            <span class="tag">Computer Vision</span>
           </div>
         </div>
 
         <div class="project-card">
           <div class="project-header">
-            <h3>Project Two</h3>
+            <h3>TrickSki Calculator</h3>
             <div class="project-links">
-              <a href="#" target="_blank" rel="noopener">GitHub</a>
-              <a href="#" target="_blank" rel="noopener">Live</a>
+              <a href="https://github.com/CS571-F25/p69" target="_blank" rel="noopener">GitHub</a>
+              <a href="https://cs571-f25.github.io/p69/#/" target="_blank" rel="noopener">Live</a>
             </div>
           </div>
-          <p>Add a description of your project here &mdash; what motivated it, what you learned, and the tech involved.</p>
+          <p>Details coming soon.</p>
+          <div class="project-tags">
+            <span class="tag">TBD</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <h3>MiniSpark Engine</h3>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+          <p>Implemented a multithreaded Spark-style data processing framework in C supporting map, filter, join, and partitionBy across partitioned datasets. Built a custom thread pool with POSIX threads and mutex/condvar synchronization, designed a recursive RDD materialization model with lazy computation and dependency tracking, and implemented partition caching to eliminate redundant computation under deep dependency chains.</p>
           <div class="project-tags">
             <span class="tag">C</span>
-            <span class="tag">Data Systems</span>
+            <span class="tag">Multithreading</span>
+            <span class="tag">Operating Systems</span>
           </div>
         </div>
 
         <div class="project-card">
           <div class="project-header">
-            <h3>Project Three</h3>
+            <h3>Spark Cluster Project</h3>
             <div class="project-links">
               <a href="#" target="_blank" rel="noopener">GitHub</a>
             </div>
           </div>
-          <p>Add a description of your project here &mdash; keep it concise but informative.</p>
+          <p>Built and deployed a distributed data processing cluster using Docker, coordinating multiple nodes for Spark computation and storage. Optimized query efficiency through data partitioning, caching, and execution plan analysis. Developed a machine learning model to predict loan approval outcomes and produced county-level visual analyses of loan trends and approval patterns.</p>
           <div class="project-tags">
             <span class="tag">Python</span>
-            <span class="tag">AI/ML</span>
+            <span class="tag">Spark</span>
+            <span class="tag">Docker</span>
+            <span class="tag">ML</span>
           </div>
         </div>
 
@@ -163,7 +210,7 @@
               <h3>Marketing Operations Intern</h3>
               <span class="timeline-date">Jun 2024 &mdash; Sep 2024</span>
             </div>
-            <p class="timeline-company">Instructure &middot; Salt Lake City, Utah &middot; Remote</p>
+            <p class="timeline-company">Instructure &middot; Salt Lake City &middot; Remote</p>
             <p>Over the course of this internship, I was tasked with creating a data pipeline for a Media Mix Model. This involved writing various SQL queries in Snowflake and navigating finance data from a different database. I used APIs in Google Sheets using Python to clean and aggregate data. I additionally learned about the statistics that go into a Media Mix Model from the data scientist developing it.</p>
           </div>
         </div>
@@ -175,7 +222,7 @@
               <h3>Revenue/Data Operations Intern</h3>
               <span class="timeline-date">Jun 2023 &mdash; Aug 2023</span>
             </div>
-            <p class="timeline-company">Instructure &middot; Salt Lake City Metropolitan Area</p>
+            <p class="timeline-company">Instructure &middot; Salt Lake City &middot; Hybrid</p>
             <ul class="timeline-bullets">
               <li>Worked with SQL, Salesforce, Tableau, and Excel to create Dashboards for the Revenue Operations team. I used data to accurately tell a story of what our team needs to keep doing and what they need to improve upon.</li>
               <li>Worked in Salesforce cleaning, deduping, adding, and updating accounts.</li>
@@ -284,11 +331,11 @@
   <section class="section" id="contact">
     <div class="container">
       <h2 class="section-title">Get in Touch</h2>
-      <p class="contact-intro">I love meeting new people and hearing about exciting ideas. Whether it's a project, an opportunity, or just a friendly chat &mdash; don't be a stranger!</p>
+      <p class="contact-intro">I love meeting new people and hearing about exciting ideas. If you have a project, an opportunity, or just want to chat, don’t be a stranger!</p>
       <div class="contact-links">
-        <a href="mailto:your.email@example.com" class="btn btn-primary">Drop Me a Line</a>
+        <a href="https://mail.google.com/mail/?view=cm&to=calvin.debellis@gmail.com" target="_blank" rel="noopener" class="btn btn-primary">Send Me an Email</a>
         <a href="https://github.com/TheClav" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
-        <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/cdebellis" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
       </div>
     </div>
   </section>
