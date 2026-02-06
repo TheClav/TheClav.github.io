@@ -35,6 +35,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 a {
   color: var(--color-accent);
   text-decoration: none;
@@ -281,6 +286,8 @@ a:hover {
 .profile-photo {
   width: 72px;
   height: 72px;
+  max-width: 72px;
+  max-height: 72px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center 30%;
@@ -702,7 +709,7 @@ a:hover {
 @media (max-width: 1350px) {
   .side-nav,
   .side-nav-connector {
-    display: none;
+    display: none !important;
   }
 }
 
