@@ -133,6 +133,19 @@ document.querySelectorAll('.testimonial-toggle').forEach(btn => {
   requestAnimationFrame(update);
 })();
 
+// Copy email to clipboard
+(function() {
+  const btn = document.getElementById('copy-email-btn');
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    navigator.clipboard.writeText('calvin.debellis@gmail.com').then(() => {
+      const original = btn.textContent;
+      btn.textContent = 'Email Copied!';
+      setTimeout(() => { btn.textContent = original; }, 2000);
+    });
+  });
+})();
+
 // Add fade-in CSS dynamically
 const style = document.createElement('style');
 style.textContent = `
