@@ -138,12 +138,35 @@ document.querySelectorAll('.testimonial-toggle').forEach(btn => {
   const btn = document.getElementById('copy-email-btn');
   if (!btn) return;
   btn.addEventListener('click', () => {
-    navigator.clipboard.writeText('calvin.debellis@gmail.com').then(() => {
-      const original = btn.textContent;
+    const email = 'calvin.debellis@gmail.com';
+    const original = btn.textContent;
+    const showCopied = () => {
       btn.textContent = 'Email Copied!';
       setTimeout(() => { btn.textContent = original; }, 2000);
-    });
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(email).then(showCopied).catch(() => {
+        fallbackCopy(email, showCopied);
+      });
+    } else {
+      fallbackCopy(email, showCopied);
+    }
   });
+
+  function fallbackCopy(text, callback) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    try {
+      document.execCommand('copy');
+      callback();
+    } catch (e) {}
+    document.body.removeChild(ta);
+  }
 })();
 
 // Add fade-in CSS dynamically
