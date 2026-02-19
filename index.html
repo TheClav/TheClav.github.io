@@ -146,7 +146,7 @@
               <a href="https://cs571-f25.github.io/p69/#/" target="_blank" rel="noopener" class="link-live">Live</a>
             </div>
           </div>
-          <p>Built a real-time trick water skiing calculator for competitive athletes based on official IWWF 2025 rules. Features a two-pass system with duplicate detection, full trick modifier support, and reverse trick management. Integrated browser-based AI recommendations using skill-tiered GRU models trained on real Nationals and Regionals competition data — models run entirely on-device via ONNX Runtime Web with no backend required. Includes heatmap-colored trick buttons by prediction confidence, shareable run formatting, and a full trick reference guide. Deployed as a web app and native iOS &amp; Android app via Capacitor.</p>
+          <p>Co-built a real-time trick water skiing calculator for competitive athletes and judges, enforcing official IWWF 2025 rules with a two-pass system, duplicate detection, full modifier support, and reverse trick management. Solely designed and integrated the ML pipeline: trained skill-tiered GRU models on real Nationals and Regionals competition data, exported them to ONNX, and wired up on-device inference via ONNX Runtime Web with no backend required. The models achieve a 95% hit rate in the top 5 suggestions and are displayed with heatmap-colored confidence buttons. Also contributed to the React frontend. Deployed as a web app and native iOS and Android app via Capacitor.</p>
           <div class="project-tags">
             <span class="tag">React</span>
             <span class="tag">GRU</span>
@@ -163,7 +163,7 @@
               <a href="https://github.com/TheClav/Trickski-Image-Classifier" target="_blank" rel="noopener">GitHub</a>
             </div>
           </div>
-          <p>Built a convolutional neural network to classify waterski trick orientation from custom video footage. Collaborated with a competition data provider for raw footage, designed the full dataset pipeline including image preprocessing and orientation-based spatial modeling, and optimized classification accuracy toward an automated judging system that can score a skier's run directly from video.</p>
+          <p>Phase 1 of a computer vision pipeline to automatically score competitive trick water skiing runs. Fine-tuned a pretrained ResNet-18 to classify skier body orientation (forward, back, left, right) from still frames, serving as the foundation for identifying tricks as orientation sequences over time. Built a 240-image dataset from scratch by sourcing and labeling archived tournament footage. Key breakthroughs included removing rotational data augmentation (which was destroying orientation signal) and adding a center crop to cut background noise, pushing test accuracy from roughly 50% to 81-85%.</p>
           <div class="project-tags">
             <span class="tag">Python</span>
             <span class="tag">CNN</span>
@@ -176,28 +176,30 @@
           <div class="project-header">
             <h3>MiniSpark Engine</h3>
             <div class="project-links">
-              <a href="#" target="_blank" rel="noopener">GitHub</a>
+              <a href="https://github.com/TheClav/MiniSpark-Engine" target="_blank" rel="noopener">GitHub</a>
             </div>
           </div>
-          <p>Implemented a multithreaded Spark-style data processing framework in C supporting map, filter, join, and partitionBy across partitioned datasets. Built a custom thread pool with POSIX threads and mutex/condvar synchronization, designed a recursive RDD materialization model with lazy computation and dependency tracking, and implemented partition caching to eliminate redundant computation under deep dependency chains.</p>
+          <p>Implemented a Spark-style data processing engine in C, supporting lazy RDD transformation pipelines (map, filter, partitionBy, and join) across partitioned datasets. The engine parallelizes execution through a hand-built POSIX thread pool, with a recursive post-order DAG scheduler that resolves all partition dependencies before submitting work, preventing deadlocks in deep dependency chains. Task timing is captured at microsecond resolution via a dedicated monitoring thread.</p>
           <div class="project-tags">
             <span class="tag">C</span>
             <span class="tag">Multithreading</span>
             <span class="tag">Operating Systems</span>
+            <span class="tag">Spark</span>
           </div>
         </div>
 
         <div class="project-card">
           <div class="project-header">
-            <h3>Spark Cluster Project</h3>
+            <h3>Spark HDFS Cluster Project</h3>
             <div class="project-links">
-              <a href="#" target="_blank" rel="noopener">GitHub</a>
+              <a href="https://github.com/TheClav/spark-hdfs-loan-analysis" target="_blank" rel="noopener">GitHub</a>
             </div>
           </div>
-          <p>Built and deployed a distributed data processing cluster using Docker, coordinating multiple nodes for Spark computation and storage. Optimized query efficiency through data partitioning, caching, and execution plan analysis. Developed a machine learning model to predict loan approval outcomes and produced county-level visual analyses of loan trends and approval patterns.</p>
+          <p>Built a fully containerized 6-node distributed cluster with Apache Spark and HDFS using Docker Compose to analyze ~400k real Wisconsin mortgage applications (HMDA 2021). Demonstrated all three Spark query interfaces (RDD, DataFrame, Spark SQL), designed a Hive data warehouse with bucketing for partition-local aggregations, and analyzed broadcast join vs. shuffle behavior through query plan inspection. Trained a PySpark MLlib Decision Tree classifier to predict loan approval, achieving 89.55% accuracy and identifying depth-10 as the optimal complexity before overfitting.</p>
           <div class="project-tags">
             <span class="tag">Python</span>
             <span class="tag">Spark</span>
+            <span class="tag">HDFS</span>
             <span class="tag">Docker</span>
             <span class="tag">ML</span>
           </div>
