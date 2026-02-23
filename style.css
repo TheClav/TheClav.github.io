@@ -519,6 +519,10 @@ a:hover {
   margin-bottom: 0.5rem;
 }
 
+.timeline-summary {
+  color: var(--color-text-subtle);
+}
+
 .timeline-content > p:last-child {
   color: var(--color-text-subtle);
 }

@@ -70,6 +70,7 @@
       <div class="hero-cta">
         <a href="#projects" class="btn btn-primary">Check Out My Work</a>
         <a href="#contact" class="btn btn-outline">Get in Touch</a>
+        <a href="Calvin%20Debellis%20Resume.pdf" download="Calvin_Debellis_Resume.pdf" class="btn btn-outline">Download Resume</a>
       </div>
     </div>
     <div class="scroll-hint" aria-hidden="true">
@@ -95,10 +96,10 @@
             what they can unlock.
           </p>
           <p>
-            From fine-tuning LLMs in Prague to building data pipelines and dashboards
-            stateside, I love diving into tough problems. I'm proficient
-            in Python, SQL, and I've worked with tools like Azure, Snowflake,
-            Tableau, Docker, and more!
+            Outside of work I'm an athlete at heart. I love lifting, competing, and playing just about any sport. Skiing is my biggest passion, growing up snow skiing in Park City, Utah and water skiing on the lakes up north in Wisconsin. I competed on the UW-Madison collegiate waterski team, which pushed my skiing to another level and gave me some of the most memorable experiences of college. You'll see that bleed into some of my projects too.
+          </p>
+          <p>
+            I'm also drawn to adventure and new experiences. Having lived in Australia, Thailand, and Czechia, I've developed a real love for experiencing new places and learning from the people in them. When I'm closer to home I enjoy hiking, camping, and spending time outdoors. I also meditate regularly and dabble in ceramics. I think staying sharp mentally, physically, and creatively matters just as much as staying sharp technically.
           </p>
         </div>
         <div class="about-details">
@@ -120,11 +121,11 @@
           <div class="detail-card">
             <h3>Interests</h3>
             <div class="detail-tags">
-              <span class="tag">Data Engineering</span>
-              <span class="tag">Classical ML</span>
-              <span class="tag">Gen AI</span>
-              <span class="tag">Cloud &amp; DevOps</span>
-              <span class="tag">Systems Engineering</span>
+              <span class="tag">Skiing</span>
+              <span class="tag">Traveling</span>
+              <span class="tag">Mindfulness</span>
+              <span class="tag">Outdoors</span>
+              <span class="tag">Learning</span>
             </div>
           </div>
         </div>
@@ -223,16 +224,13 @@
               <span class="timeline-date">May 2025 &mdash; Aug 2025</span>
             </div>
             <p class="timeline-company">Ataccama &middot; Prague, Czechia &middot; On-site</p>
+            <p class="timeline-summary">Worked on an AI agent team at a data governance company, focused on fine-tuning LLMs in Azure AI Foundry to reduce system prompt size and building evaluation infrastructure to measure model improvements.</p>
             <ul class="timeline-bullets">
-              <li>Researched fine-tuning strategies for LLMs to improve agent performance by reducing system prompt size.</li>
-              <li>Expanded and enhanced the agent evaluation framework to support iteration across multiple fine-tuned agents.</li>
-              <li>Identified potential to reduce system prompt token usage by up to 50% (11k &rarr; &lt;6k).</li>
-              <li>Cut evaluation variance in half and increased unique evaluation questions by 140%.</li>
+              <li>Identified potential to reduce system-prompt token usage ~50% (11k &rarr; &lt;6k) by researching and applying LLM fine-tuning strategies to replace prompt instructions with model behavior.</li>
+              <li>Expanded and enhanced the evaluation framework to support iteration across multiple fine-tuned agents. Cut down evaluation variance by increasing unique evaluation questions by 140%.</li>
               <li>Developed data gathering and scripting workflows for fine-tuning LLMs in Python.</li>
-              <li>Gained cloud experience with Azure and Amazon S3, including LLM fine-tuning in Azure AI Foundry.</li>
+              <li>Deployed fine-tuned models via Azure AI Foundry; improved testing by iterating through an existing CI/CD pipeline built on GitLab, Docker, Kubernetes, and Amazon S3.</li>
               <li>Built data visualizations with Pandas, Plotly, and Matplotlib.</li>
-              <li>Worked with GitLab CI/CD pipelines, Docker, and Kubernetes.</li>
-              <li>Debugged GraphQL APIs by analyzing error logs.</li>
             </ul>
           </div>
         </div>
@@ -245,7 +243,11 @@
               <span class="timeline-date">Jun 2024 &mdash; Sep 2024</span>
             </div>
             <p class="timeline-company">Instructure &middot; Salt Lake City &middot; Remote</p>
-            <p>Over the course of this internship, I was tasked with creating a data pipeline for a Media Mix Model. This involved writing various SQL queries in Snowflake and navigating finance data from a different database. I used APIs in Google Sheets using Python to clean and aggregate data. I additionally learned about the statistics that go into a Media Mix Model from the data scientist developing it.</p>
+            <p class="timeline-summary">Worked with the marketing data team at an edtech SaaS company, independently owning an end-to-end ETL pipeline project to support media mix modeling and marketing spend analysis.</p>
+            <ul class="timeline-bullets">
+              <li>Managed cross-functional stakeholders internally and with external partners, coordinating timeline and deliverables end-to-end as the sole owner of the project.</li>
+              <li>Developed ETL pipeline to serve data needed for Media Mix Model using SQL in Snowflake and scheduled jobs.</li>
+            </ul>
           </div>
         </div>
 
@@ -257,10 +259,11 @@
               <span class="timeline-date">Jun 2023 &mdash; Aug 2023</span>
             </div>
             <p class="timeline-company">Instructure &middot; Salt Lake City &middot; Hybrid</p>
+            <p class="timeline-summary">Supported the Revenue Operations team at an edtech SaaS company with SQL-driven dashboard validation and data work, while learning the full RevOps and marketing data stack.</p>
             <ul class="timeline-bullets">
-              <li>Worked with SQL, Salesforce, Tableau, and Excel to create Dashboards for the Revenue Operations team. I used data to accurately tell a story of what our team needs to keep doing and what they need to improve upon.</li>
-              <li>Worked in Salesforce cleaning, deduping, adding, and updating accounts.</li>
-              <li>Worked in multiple web scraping projects where I would gather intel off of school websites. This was to understand when server traffic would pick up based on the school's start dates.</li>
+              <li>Validated and optimized Tableau dashboards by writing and running SQL queries across multiple data sources.</li>
+              <li>Shadowed a data engineer maintaining and improving marketing pipeline dashboards; gained exposure to Revenue Operations pipelines, direct data attribution, and Salesforce account management.</li>
+              <li>Completed a web scraping project to collect school start dates and predict server traffic.</li>
             </ul>
           </div>
         </div>
@@ -274,6 +277,7 @@
             </div>
             <p class="timeline-company">Inspirit AI &middot; United States &middot; Remote</p>
             <p>Worked with a team developing an app to identify cancerous skin lesions from a photo. I specifically was in charge of data manipulation to enlarge training datasets for the model. I would often stretch a training set of a couple of photos by multiple factors through photo editing. I would make specific editing choices based off of accuracy vs. performance tradeoffs.</p>
+            <p>This experience was a turning point for me. Watching a model's performance shift dramatically based purely on how the data was prepared, not the architecture, not the algorithm, made it clear just how foundational data really is. It sparked a genuine curiosity in me about data quality, representation, and scale that has shaped everything I've pursued since.</p>
           </div>
         </div>
 
