@@ -22,6 +22,7 @@ A dark-themed static portfolio built with vanilla HTML, CSS, and JavaScript. No 
 - Click-to-copy email button
 - Scroll-triggered fade-in animations
 - Fully responsive with mobile hamburger nav
+- GoatCounter analytics with hash-based section change tracking
 
 ## Tech
 

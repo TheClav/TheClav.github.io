@@ -169,6 +169,13 @@ document.querySelectorAll('.testimonial-toggle').forEach(btn => {
   }
 })();
 
+// GoatCounter — track hash-based section navigation
+window.addEventListener('hashchange', () => {
+  if (window.goatcounter && window.goatcounter.count) {
+    window.goatcounter.count({ path: location.pathname + location.hash });
+  }
+});
+
 // Add fade-in CSS dynamically
 const style = document.createElement('style');
 style.textContent = `
