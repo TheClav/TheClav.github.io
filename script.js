@@ -176,6 +176,103 @@ window.addEventListener('hashchange', () => {
   }
 });
 
+// GoatCounter — event tracking
+(function () {
+  function track(path) {
+    if (window.goatcounter && window.goatcounter.count) {
+      window.goatcounter.count({ path: path });
+    }
+  }
+
+  function slug(str) {
+    return str.trim().toLowerCase().replace(/\s+/g, '-');
+  }
+
+  // Section visibility — fire once per section
+  const sectionObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        track('/section/' + entry.target.id);
+        sectionObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  ['about', 'projects', 'experience', 'testimonials', 'contact'].forEach(function (id) {
+    const el = document.getElementById(id);
+    if (el) sectionObserver.observe(el);
+  });
+
+  // Hero CTA clicks
+  document.querySelectorAll('.hero .btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      track('/click/hero-' + slug(btn.textContent));
+    });
+  });
+
+  // Top navbar link clicks
+  document.querySelectorAll('.nav-links a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      track('/click/nav-' + (link.getAttribute('href') || '').replace('#', ''));
+    });
+  });
+
+  // Side nav clicks
+  document.querySelectorAll('.side-nav-item').forEach(function (item) {
+    item.addEventListener('click', function () {
+      track('/click/side-nav-' + item.dataset.target);
+    });
+  });
+
+  // Mobile nav toggle
+  const navToggle = document.querySelector('.nav-toggle');
+  if (navToggle) {
+    navToggle.addEventListener('click', function () {
+      track('/click/mobile-nav-toggle');
+    });
+  }
+
+  // Project card links (GitHub / Live)
+  document.querySelectorAll('.project-card').forEach(function (card) {
+    const title = card.querySelector('h3');
+    const projectName = title ? slug(title.textContent) : 'unknown';
+    card.querySelectorAll('.project-links a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        const type = link.classList.contains('link-live') ? 'live' : 'github';
+        track('/click/project-' + projectName + '-' + type);
+      });
+    });
+  });
+
+  // Testimonial expand / collapse
+  document.querySelectorAll('.testimonial-card').forEach(function (card) {
+    const nameEl = card.querySelector('.testimonial-name');
+    const name = nameEl ? nameEl.textContent.trim().split(' ')[0].toLowerCase() : 'unknown';
+    const btn = card.querySelector('.testimonial-toggle');
+    if (btn) {
+      btn.addEventListener('click', function () {
+        // existing listener fires first and toggles .expanded; read new state here
+        track('/click/testimonial-' + (card.classList.contains('expanded') ? 'expand' : 'collapse') + '-' + name);
+      });
+    }
+  });
+
+  // Contact — copy email button
+  const copyBtn = document.getElementById('copy-email-btn');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function () {
+      track('/click/contact-copy-email');
+    });
+  }
+
+  // Contact — external links (GitHub, LinkedIn)
+  document.querySelectorAll('.contact-links a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      track('/click/contact-' + slug(link.textContent));
+    });
+  });
+})();
+
 // Add fade-in CSS dynamically
 const style = document.createElement('style');
 style.textContent = `
