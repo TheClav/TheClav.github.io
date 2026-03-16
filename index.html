@@ -144,7 +144,8 @@
           <div class="project-header">
             <h3>TrickSki Calculator</h3>
             <div class="project-links">
-              <a href="https://github.com/CS571-F25/p69" target="_blank" rel="noopener">GitHub</a>
+              <a href="https://github.com/CS571-F25/p69" target="_blank" rel="noopener" class="link-github">GitHub</a>
+              <a href="https://apps.apple.com/us/app/trick-ski-calc/id6760277816" target="_blank" rel="noopener" class="link-appstore">App Store</a>
               <a href="https://cs571-f25.github.io/p69/#/" target="_blank" rel="noopener" class="link-live">Live</a>
             </div>
           </div>
@@ -162,7 +163,7 @@
           <div class="project-header">
             <h3>Trickski Orientation CNN</h3>
             <div class="project-links">
-              <a href="https://github.com/TheClav/Trickski-Image-Classifier" target="_blank" rel="noopener">GitHub</a>
+              <a href="https://github.com/TheClav/Trickski-Image-Classifier" target="_blank" rel="noopener" class="link-github">GitHub</a>
             </div>
           </div>
           <p>Phase 1 of a computer vision pipeline to automatically score competitive trick water skiing runs. Fine-tuned a pretrained ResNet-18 to classify skier body orientation (forward, back, left, right) from still frames, serving as the foundation for identifying tricks as orientation sequences over time. Built a 240-image dataset from scratch by sourcing and labeling archived tournament footage. Key breakthroughs included removing rotational data augmentation (which was destroying orientation signal) and adding a center crop to cut background noise, pushing test accuracy from roughly 50% to 81-85%.</p>
@@ -178,7 +179,7 @@
           <div class="project-header">
             <h3>MiniSpark Engine</h3>
             <div class="project-links">
-              <a href="https://github.com/TheClav/MiniSpark-Engine" target="_blank" rel="noopener">GitHub</a>
+              <a href="https://github.com/TheClav/MiniSpark-Engine" target="_blank" rel="noopener" class="link-github">GitHub</a>
             </div>
           </div>
           <p>Implemented a Spark-style data processing engine in C, supporting lazy RDD transformation pipelines (map, filter, partitionBy, and join) across partitioned datasets. The engine parallelizes execution through a hand-built POSIX thread pool, with a recursive post-order DAG scheduler that resolves all partition dependencies before submitting work, preventing deadlocks in deep dependency chains. Task timing is captured at microsecond resolution via a dedicated monitoring thread.</p>
@@ -194,7 +195,7 @@
           <div class="project-header">
             <h3>Spark HDFS Cluster Project</h3>
             <div class="project-links">
-              <a href="https://github.com/TheClav/spark-hdfs-loan-analysis" target="_blank" rel="noopener">GitHub</a>
+              <a href="https://github.com/TheClav/spark-hdfs-loan-analysis" target="_blank" rel="noopener" class="link-github">GitHub</a>
             </div>
           </div>
           <p>Built a fully containerized 6-node distributed cluster with Apache Spark and HDFS using Docker Compose to analyze ~400k real Wisconsin mortgage applications (HMDA 2021). Demonstrated all three Spark query interfaces (RDD, DataFrame, Spark SQL), designed a Hive data warehouse with bucketing for partition-local aggregations, and analyzed broadcast join vs. shuffle behavior through query plan inspection. Trained a PySpark MLlib Decision Tree classifier to predict loan approval, achieving 89.55% accuracy and identifying depth-10 as the optimal complexity before overfitting.</p>
