@@ -856,4 +856,8 @@ a:hover {
   .testimonials-grid {
     columns: 1;
   }
+
+  .appstore-full {
+    display: none;
+  }
 }
