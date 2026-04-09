@@ -476,6 +476,29 @@ a:hover {
   color: #3a9ef5 !important;
 }
 
+.link-googleplay {
+  color: #01875f !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.link-googleplay::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2301875f' d='M8 5v14l11-7z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  flex-shrink: 0;
+}
+
+.link-googleplay:hover {
+  border-color: #01875f !important;
+  color: #34a87f !important;
+}
+
 @keyframes live-pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.3; transform: scale(0.75); }
@@ -857,7 +880,8 @@ a:hover {
     columns: 1;
   }
 
-  .appstore-full {
+  .appstore-full,
+  .googleplay-full {
     display: none;
   }
 }
